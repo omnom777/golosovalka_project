@@ -1,0 +1,41 @@
+Классы и структура
+
+Класс Vote
+- Поля: user_id, option_index
+- Назначение: хранит один голос пользователя и номер выбранного варианта.
+
+Класс Poll
+- Поля: id, question, options, votes, created_by, created_at
+- Назначение: модель опроса с вариантами и голосами.
+- Важные методы: new, from_dict, to_dict.
+
+Класс Settings
+- Поля: bot_token, data_file
+- Назначение: централизованная конфигурация запуска.
+
+Класс PollService
+- Назначение: бизнес-логика голосования и работа с JSON-хранилищем.
+- Основные методы:
+  create_poll
+  list_polls
+  get_poll
+  add_option
+  cast_vote
+  calculate_results
+
+Исключения логики
+- PollError
+- PollNotFoundError
+- DuplicateVoteError
+- InvalidOptionError
+- InvalidPollInputError
+
+Структура файлов
+- bot.py: Telegram-команды и обработчики.
+- config.py: загрузка параметров окружения.
+- poll_models.py: модели Poll и Vote.
+- poll_service.py: операции опросов и подсчёт результатов.
+- polls.json: постоянное хранилище опросов.
+- secret: секретные параметры (токен и путь к данным).
+- requirements.txt: зависимости Python.
+- README.md: инструкции запуска и использования.

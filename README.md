@@ -1,1 +1,0 @@
-# golosovalka_project
